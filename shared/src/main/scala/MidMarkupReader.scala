@@ -12,9 +12,9 @@ trait MidMarkupReader {
   /** Vector of all recognized editionTypes. */
   def recognizedTypes: Vector[MidEditionType]
 
-  /** Specific edition type to apply. */
+  /** Specific edition type to apply.
   def editionType: MidEditionType
-
+*/
 
   /**  Given a  citable node in archival
   * format, compose the CEX String for the corresponding
@@ -23,8 +23,9 @@ trait MidMarkupReader {
   * @param cexNode CEX String for a single node in
   * archival format.
   */
-    @JSExport def editedNodeCex(cn: CitableNode, separator: String = "#"):  String = {
-    val editionNode = editedNode(cn)
+    @JSExport def editedNodeCex(cn: CitableNode,
+      editionType: MidEditionType,  separator: String = "#"):  String = {
+    val editionNode = editedNode(cn, editionType)
     editionNode.urn.toString + separator + editionNode.text
   }
 
@@ -34,7 +35,8 @@ trait MidMarkupReader {
   *
   * @param cn A single node in archival format.
   */
-  def editedNode(cn: CitableNode): CitableNode
+  def editedNode(cn: CitableNode,
+  editionType: MidEditionType): CitableNode
 
 
   /**  For a citable node in archival format, compose
@@ -45,8 +47,9 @@ trait MidMarkupReader {
   * in archival representation.
   * @param srcUrn `CtsUrn` for the citable node.
   */
-  @JSExport def editedNodeCex(srcUrn: CtsUrn, archival: String): String = {
-    editedNodeCex(CitableNode(srcUrn, archival))
+  @JSExport def editedNodeCex(srcUrn: CtsUrn, archival: String,
+  editionType: MidEditionType): String = {
+    editedNodeCex(CitableNode(srcUrn, archival), editionType)
   }
 
   /**  For a  citable node in archival
@@ -57,8 +60,8 @@ trait MidMarkupReader {
   * in archival representation.
   * @param srcUrn `CtsUrn` for the citable node.
   */
-  @JSExport def editedNode(srcUrn: CtsUrn, archival: String): CitableNode = {
-    editedNode(CitableNode(srcUrn, archival))
+  @JSExport def editedNode(srcUrn: CtsUrn, archival: String, editionType: MidEditionType): CitableNode = {
+    editedNode(CitableNode(srcUrn, archival), editionType: MidEditionType)
   }
 
   /**  Given a CEX String for a citable node in archival
@@ -68,10 +71,10 @@ trait MidMarkupReader {
   * @param cexNode CEX String for a single node in
   * archival format.
   */
-  @JSExport def editedNodeCex(cexNode: String):  String = {
+  @JSExport def editedNodeCex(cexNode: String, editionType: MidEditionType):  String = {
     val cols = cexNode.split("#")
     val urn = CtsUrn(cols(0))
-    editedNodeCex(urn, cols(1))
+    editedNodeCex(urn, cols(1), editionType: MidEditionType)
   }
 
   /**  For a  citable node in archival
@@ -81,10 +84,10 @@ trait MidMarkupReader {
   * @param cexNode CEX String for a single node in
   * archival format.
   */
-  @JSExport def editedNode(cexNode: String): CitableNode = {
+  @JSExport def editedNode(cexNode: String, editionType: MidEditionType): CitableNode = {
     val cols = cexNode.split("#")
     val urn = CtsUrn(cols(0))
-    editedNode(urn, cols(1))
+    editedNode(urn, cols(1), editionType: MidEditionType)
   }
 
 
@@ -97,9 +100,9 @@ trait MidMarkupReader {
   * @param cex CEX String of text(s) in archival
   * format.
   */
-  @JSExport def editionCex(cex: String): String = {
+  @JSExport def editionCex(cex: String, editionType: MidEditionType): String = {
     val cexNodes = for (ln <- cex.split("\n")) yield {
-      editedNodeCex(ln)
+      editedNodeCex(ln, editionType: MidEditionType)
     }
     cexNodes.mkString("\n")
   }
@@ -110,9 +113,9 @@ trait MidMarkupReader {
   *
   * @param corpus A Corpus in archival format.
   */
-  @JSExport def edition(corpus: Corpus) : Corpus = {
+  @JSExport def edition(corpus: Corpus, editionType: MidEditionType) : Corpus = {
     val nodes = for (n <- corpus.nodes) yield {
-      editedNode(n)
+      editedNode(n, editionType: MidEditionType)
     }
     Corpus(nodes.toVector)
   }
