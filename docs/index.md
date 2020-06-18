@@ -3,7 +3,7 @@ title: MID markupreader
 layout: page
 ---
 
-**Library version 1.0.0**
+**Library version 1.0.1**
 
 ## The `MidMarkupReader` trait
 

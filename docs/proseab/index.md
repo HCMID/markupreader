@@ -3,7 +3,7 @@ title: The MidProseABReader
 layout: page
 ---
 
-**Library version 1.0.0**
+**Library version 1.0.1**
 
 ## Example implementation
 
@@ -44,7 +44,7 @@ We create a new `CitableNode` with the `editedNode` method. Its two parameters a
 ```scala
 MidProseABDiplomatic.editedNode(citableNode, MidDiplomaticEdition)
 // res1: CitableNode = CitableNode(
-//   CtsUrn("urn:cts:mid:readerguide.xml.v1_dipl:1"),
+//   CtsUrn("urn:cts:mid:readerguide.xml.v1:1"),
 //   "Text in first version "
 // )
 ```
@@ -70,11 +70,11 @@ MidProseABDiplomatic.edition(corpus, MidDiplomaticEdition)
 // res2: Corpus = Corpus(
 //   Vector(
 //     CitableNode(
-//       CtsUrn("urn:cts:mid:readerguide.xml.v1_dipl:1"),
+//       CtsUrn("urn:cts:mid:readerguide.xml.v1:1"),
 //       "Text in first version "
 //     ),
 //     CitableNode(
-//       CtsUrn("urn:cts:mid:readerguide.xml.v1_dipl:2"),
+//       CtsUrn("urn:cts:mid:readerguide.xml.v1:2"),
 //       "Section 2 of text. "
 //     )
 //   )
@@ -85,7 +85,7 @@ Markup readers include a number of convenience methods for accepting input or pr
 
 ```scala
 MidProseABDiplomatic.editedNodeCex(citableNode, MidDiplomaticEdition)
-// res3: String = "urn:cts:mid:readerguide.xml.v1_dipl:1#Text in first version "
+// res3: String = "urn:cts:mid:readerguide.xml.v1:1#Text in first version "
 ```
 
 Refer to [the API documenation](https://hcmid.github.io/apidocs/markupreader/api/edu/holycross/shot/mid/markupreader/index.html) for full details.
