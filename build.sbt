@@ -15,7 +15,7 @@ lazy val crossed = crossProject(JSPlatform, JVMPlatform).in(file(".")).
     settings(
       name := "markupreader",
       organization := "edu.holycross.shot.mid",
-      version := "1.0.0",
+      version := "1.0.1",
       licenses += ("GPL-3.0",url("https://opensource.org/licenses/gpl-3.0.html")),
 
       resolvers += Resolver.jcenterRepo,
@@ -48,6 +48,6 @@ lazy val crossed = crossProject(JSPlatform, JVMPlatform).in(file(".")).
         mdocOut := file("docs"),
         mdocExtraArguments := Seq("--no-link-hygiene"),
         mdocVariables := Map(
-          "VERSION" -> "1.0.0"
+          "VERSION" -> "1.0.1"
         )
       )

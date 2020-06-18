@@ -18,7 +18,7 @@ trait MidMarkupReader {
 
   /**  Given a  citable node in archival
   * format, compose the CEX String for the corresponding
-  * node in the edition type specified by [[editionType]].
+  * node in the edition type specified by `editionType`.
   *
   * @param cexNode CEX String for a single node in
   * archival format.
@@ -31,7 +31,7 @@ trait MidMarkupReader {
 
   /**  Given a  citable node in archival
   * format, create the corresponding
-  * node in the edition type specified by [[editionType]].
+  * node in the edition type specified by `editionType`.
   *
   * @param cn A single node in archival format.
   */
@@ -41,7 +41,7 @@ trait MidMarkupReader {
 
   /**  For a citable node in archival format, compose
   * the CEX String for the corresponding node in
-  * the edition type specified by [[editionType]].
+  * the edition type specified by `editionType`.
   *
   * @param archival Text contents of a single citable node,
   * in archival representation.
@@ -54,7 +54,7 @@ trait MidMarkupReader {
 
   /**  For a  citable node in archival
   * format, create the corresponding
-  * node in the edition type specified by [[editionType]].
+  * node in the edition type specified by `editionType`.
   *
   * @param archival Text contents of a single citable node,
   * in archival representation.
@@ -66,7 +66,7 @@ trait MidMarkupReader {
 
   /**  Given a CEX String for a citable node in archival
   * format, compose the CEX String for the corresponding
-  * node in the edition type specified by [[editionType]].
+  * node in the edition type specified by `editionType`.
   *
   * @param cexNode CEX String for a single node in
   * archival format.
@@ -79,7 +79,7 @@ trait MidMarkupReader {
 
   /**  For a  citable node in archival
   * format, create the corresponding
-  * node in the edition type specified by [[editionType]].
+  * node in the edition type specified by `editionType`.
   *
   * @param cexNode CEX String for a single node in
   * archival format.
@@ -95,7 +95,7 @@ trait MidMarkupReader {
 
   /** Given a CEX String with text contents in
   * archival format, create a CEX String with
-  * edition of type [[editionType]].
+  * edition of type `editionType`.
   *
   * @param cex CEX String of text(s) in archival
   * format.

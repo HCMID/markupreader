@@ -12,13 +12,13 @@ class MidProseABDiplomaticSpec extends FlatSpec {
     val xml = "<div n=\"1\"><ab>Text 1<del>.1</del><add>.2</add> version</ab></div>"
     val urn =CtsUrn("urn:cts:mid:unittests.1.xml:1")
     val actual = MidProseABDiplomatic.editedNodeCex(urn, xml, MidDiplomaticEdition)
-    val expected = "urn:cts:mid:unittests.1.xml_dipl:1#Text 1 .1 version"
+    val expected = "urn:cts:mid:unittests.1.xml:1#Text 1 .1 version"
     assert (actual.trim == expected)
   }
 
   it should "compose CEX for a node" in {
     val srcCex = "urn:cts:tests:dummy.txt1.v1:1#<div n=\"1\"><ab>Text 1<del>.1</del><add>.2</add> version</ab></div>"
-    val expected = "urn:cts:tests:dummy.txt1.v1_dipl:1#Text 1 .1 version"
+    val expected = "urn:cts:tests:dummy.txt1.v1:1#Text 1 .1 version"
     assert(MidProseABDiplomatic.editedNodeCex(srcCex, MidDiplomaticEdition).trim == expected)
   }
 }

@@ -3,7 +3,7 @@
 Abstraction of reading texts in OHCO2 model
 
 
-## Current version: 1.0.0
+## Current version: 1.0.1
 
 Status: **active development**. [Release notes](./releases.md).
 

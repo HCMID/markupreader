@@ -12,5 +12,5 @@ trait MidEditionType {
   /** String value to use for version identifier in
   * `CtsUrn`s of this edition type.
   */
-  def versionId: String
+  def versionExtension: String
 }

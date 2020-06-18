@@ -41,7 +41,7 @@ case class MidProseABReader(applicableType: MidEditionType)  {
     val archival = cn.text
     val srcUrn = cn.urn
     val cex = StringBuilder.newBuilder
-    val editedUrn = srcUrn.dropVersion.addVersion( srcUrn.version + "_" + editionType.versionId)
+    val editedUrn = srcUrn.dropVersion.addVersion( srcUrn.version + editionType.versionExtension)
     cex.append(editedUrn + "#")
     editionType match {
       case MidDiplomaticEdition => cex.append(MidProseABReader.diplomatic(archival))
@@ -52,7 +52,7 @@ case class MidProseABReader(applicableType: MidEditionType)  {
   def editedNode(cn: CitableNode): CitableNode = {
     val archival = cn.text
     val srcUrn = cn.urn
-    val editedUrn = srcUrn.dropVersion.addVersion( srcUrn.version + "_" + editionType.versionId)
+    val editedUrn = srcUrn.dropVersion.addVersion( srcUrn.version + editionType.versionExtension)
 
     val content = editionType match {
       case MidDiplomaticEdition => MidProseABReader.diplomatic(archival)
