@@ -70,4 +70,4 @@ Markup readers include a number of convenience methods for accepting input or pr
 MidProseABDiplomatic.editedNodeCex(citableNode, MidDiplomaticEdition)
 ```
 
-Refer to the API documenation for full details.
+Refer to [the API documenation](https://hcmid.github.io/apidocs/markupreader/api/edu/holycross/shot/mid/markupreader/index.html) for full details.

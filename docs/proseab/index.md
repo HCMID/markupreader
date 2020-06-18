@@ -88,4 +88,4 @@ MidProseABDiplomatic.editedNodeCex(citableNode, MidDiplomaticEdition)
 // res3: String = "urn:cts:mid:readerguide.xml.v1_dipl:1#Text in first version "
 ```
 
-Refer to the API documenation for full details.
+Refer to [the API documenation](https://hcmid.github.io/apidocs/markupreader/api/edu/holycross/shot/mid/markupreader/index.html) for full details.
